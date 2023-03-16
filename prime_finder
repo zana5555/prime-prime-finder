@@ -1,0 +1,22 @@
+"""
+Created on Thu Mar 16 20:46:19 2023
+
+@author: Mokhtar Mahmoudian
+"""
+def prime(n):
+    lst = list(range(2,n))
+    not_primes = []
+    if n==0 or n ==1:
+        return "not defined"
+    elif n ==2:
+        return n
+        
+    else: 
+        for i in range(3, n):
+            for j in range(2, i):
+                if i%j==0:
+                  not_primes.append(i)
+    return set(lst)-set(not_primes)
+   
+n =5
+print(prime(n)) #[2, 3, 5, 7]
